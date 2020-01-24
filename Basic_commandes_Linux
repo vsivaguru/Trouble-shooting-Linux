@@ -182,3 +182,9 @@ claranet@cladwh-pd01:/data/mysql/replication_temp$ watch -d du -sh *
 
 sudo mkdir ssl
 sudo chown -R svinayagam:claranet ssl
+
+• nmap
+nmap -p 3389 -T4 -Pn 10.129.150.109
+nmap -p 22 -T4 -Pn $IP
+
+
