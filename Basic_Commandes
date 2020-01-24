@@ -11,3 +11,6 @@ vi syslog.1
 cd telegraf/ vi telegraf.log
 
 
+#nmap
+nmap -p 443-T4 -Pn 10.205.20.1
+
