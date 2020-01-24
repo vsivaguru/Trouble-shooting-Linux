@@ -1,0 +1,13 @@
+https://peekin.fr.clara.net/CGraphz/index.php?module=dashboard#Load
+
+cat /etc/motd
+Uptime
+Free -m
+vi /data/mysql/log/mysql.err
+Vi  /data/mysql/log/mysql-slow-query.log
+cd /var/log/
+cat kern.log
+vi syslog.1
+cd telegraf/ vi telegraf.log
+
+
