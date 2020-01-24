@@ -187,4 +187,7 @@ sudo chown -R svinayagam:claranet ssl
 nmap -p 3389 -T4 -Pn 10.129.150.109
 nmap -p 22 -T4 -Pn $IP
 
+• Dump:
+curl http://127.0.0.1 --trace-ascii dump.txt
+
 
