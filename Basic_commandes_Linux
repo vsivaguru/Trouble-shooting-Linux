@@ -1,0 +1,184 @@
+• Vérifier la version de linux
+
+cat /etc/*elea*
+lsb_release -dirc
+
+• Taille de ram
+free- m
+
+• Nombre de cpu
+Nproc
+
+• Host curnel
+uname -r
+
+• Vérifier je suis appartiens à quel group
+groups
+
+getent group docker
+
+• Find ip
+• ip a
+hostname -i
+http://ip4.clara.net/
+
+
+• Changer langue en mode console
+
+Pour lancer des applis, tu peux le faire comme ça :
+LC_ALL=fr_FR.UTF-8 LANG=fr_FR.utf8 appli_foobar
+
+Voir aussi:
+loadkeys fr
+
+À partir de l’adresse <https://forum.ubuntu-fr.org/viewtopic.php?id=329371> 
+
+• Télécharger et activer le serveur SSH sur Ubuntu
+
+>apt-get update
+>apt-get install openssh-server
+
+
+À partir de l’adresse <https://www.windows8facile.fr/debian-ubuntu-installer-serveur-ssh/> 
+
+• Architecture système:
+dpkg -l | more
+dpkg -l | grep kernel
+
+
+• Key ssh  
+
+Generer key ssh:
+
+ssh-keygen -t rsa -b 4096
+
+cat /home/siva/.ssh/id_rsa
+
+ssh-keygen -f "/root/.ssh/known_hosts" -R "172.17.0.3"
+
+ssh-copy-id -i ~/.ssh/id_rsa.pub root@172.17.0.2
+
+
+• Tar
+tar -xvf le nom du fichier
+
+Compresser un dossier: de destination => source
+tar zcvf fr.clara.net.tar fr.clara.net.new/
+ou
+tar zcvf fr.clara.net.tar.gz fr.clara.net.new/
+
+• Modifier hostname
+hostnamectl
+sudo hostnamectl set-hostname "hostname"
+
+• Mlocate
+apt install mlocate
+Updatedb
+
+• scp
+Scp siva@192.168.56.12:.kube/config .kube
+
+scp -r sec-svinayagam@100.64.1.5:/home/sec-svinayagam/synapps_bdd.xlsx . 
+
+scp svinayagam@clasyn-pa01-ci.adm.fr.clara.net:/srv/synapps/git/weave.yml .
+
+
+• LVM
+df -h
+ lvextend /dev/vg_system/lv_root -L +512M
+ lvextend /dev/vg_system/lv_root -L +7G
+ resize2fs /dev/vg_system/lv_root
+
+• Pour augmenter vg_system (-r permet de faire en même le resize2fs)
+lvextend -rL+5G /dev/mapper/vg_system-lv_root
+
+• Extend disque existant
+• Agrandir le disque existant sur vmware
+pvs
+lsblk
+dmesg
+vgs
+#rescan le disque pour effectuer le changement
+echo 1 > /sys/block/sdi/device/rescan
+
+#si le rescan ne marche pas, utiliser la commande lsscsi
+lsscsi
+echo 1 > /sys/bus/scsi/devices/32\:0\:1\:0/rescan
+fdisk /dev/sdb
+ pvresize /dev/sdb
+ vgs
+df -h
+lvextend -rL+20G /dev/mapper/vg_data-lv_data
+df -h
+
+
+https://confluence.fr.clara.net/pages/viewpage.action?pageId=2979847
+
+• Netstat
+Netstat -nlt
+
+
+• Taill du disque
+df -ah
+
+#taille de fichier
+du -ah
+
+• Log: 
+	du -sBM * | sort -n
+
+• Check commande a bien exécuté:
+echo $?
+
+• Grant Root Access to User – Root Privileges
+
+edit the file /etc/passwd and just change UID and GID to 0:
+
+$ grep john /etc/passwd
+john:x:0:0::/home/john:/bin/sh
+
+• Export PATH
+export PATH=$PATH:/usr/local/sbin
+
+• Delete PATH
+  PATH=$(echo "$PATH" | sed 's@:/home/wrong/dir$@@g')
+  PATH=$(echo "$PATH" | sed 's@:/Users/fr-lap10169/.kube/config$@@g')
+
+
+• History
+grep docker /var/log/tracking.log
+
+Log:
+less /var/log/tracking.log
+
+
+• Find ip public sirtie:
+curl ip.clara.net
+curl ifconfig.me
+
+
+• Installer un paquet manuellement en linux
+wget https://packages.erlang-solutions.com/erlang/debian/pool/esl-erlang_22.1.8-1~ubuntu~xenial_amd64.deb
+ls -la
+ sudo apt-get update
+sudo apt install ~/esl-erlang_22.1.8-1~ubuntu~xenial_amd64.deb
+
+Wget avec user & password:
+wget --user=NAME --password='PASSWORD' http://url/path/file.name
+wget --user=vivek --ask-password http://theos.in/protected/area/foo.pdf
+
+
+• Watch
+Ouvrire une nouvelle session 
+
+claranet@cladwh-pd01:/data/mysql/replication_temp$ watch -d du -sh *
+
+• Reboot 
+• Reboot -r now
+
+
+
+• Droit sur le répartoire:
+
+sudo mkdir ssl
+sudo chown -R svinayagam:claranet ssl
