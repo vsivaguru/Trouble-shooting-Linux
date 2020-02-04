@@ -58,6 +58,8 @@ ssh-keygen -f "/root/.ssh/known_hosts" -R "172.17.0.3"
 
 ssh-copy-id -i ~/.ssh/id_rsa.pub root@172.17.0.2
 
+• Find & locate files
+sudo find . -name "*poster*"
 
 • Tar
 tar -xvf le nom du fichier
