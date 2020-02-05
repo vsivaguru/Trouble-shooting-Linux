@@ -59,7 +59,14 @@ ssh-keygen -f "/root/.ssh/known_hosts" -R "172.17.0.3"
 ssh-copy-id -i ~/.ssh/id_rsa.pub root@172.17.0.2
 
 • Find & locate files
+https://www.howtoforge.com/tutorial/linux-search-files-from-the-terminal/
 sudo find . -name "*poster*"
+
+• Mlocate
+apt install mlocate
+Updatedb
+locate -c
+
 
 • Tar
 tar -xvf le nom du fichier
@@ -72,10 +79,6 @@ tar zcvf fr.clara.net.tar.gz fr.clara.net.new/
 • Modifier hostname
 hostnamectl
 sudo hostnamectl set-hostname "hostname"
-
-• Mlocate
-apt install mlocate
-Updatedb
 
 • scp
 Scp siva@192.168.56.12:.kube/config .kube
