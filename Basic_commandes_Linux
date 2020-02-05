@@ -195,4 +195,9 @@ nmap -p 22 -T4 -Pn $IP
 • Dump:
 curl http://127.0.0.1 --trace-ascii dump.txt
 
+User & Group:
+Afficher les utilisateurs :
+	$ cat /etc/passwd | awk -F: '{print $1}'
 
+Afficher les groupes :
+	$ cat /etc/group | awk -F: '{print $1}'
