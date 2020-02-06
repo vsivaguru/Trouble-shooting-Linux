@@ -201,3 +201,7 @@ Afficher les utilisateurs :
 
 Afficher les groupes :
 	$ cat /etc/group | awk -F: '{print $1}'
+
+• Service:
+	service --status-all
+
