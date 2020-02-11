@@ -1,3 +1,10 @@
+• L'option upgrade met à jour tous les paquets installés sur le système vers les dernières versions (couramment utilisé).
+apt-get --simulate upgrade
+
+• L'option dist-upgrade met à jour tous les paquets installés vers les dernières versions en installant de nouveaux paquets si nécessaire, 
+	-par opposition à l'upgrade simple qui n'ajoute pas de nouveaux paquets.
+apt-get --simulate dist-upgrade
+
 • Vérifier la version de linux
 
 cat /etc/*elea*
