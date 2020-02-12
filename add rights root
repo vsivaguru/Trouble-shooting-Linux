@@ -1,0 +1,25 @@
+Pour donner à un utilisateur (antoine) les privilèges root , on doit d’abord regarder le fichier /etc/sudoers:
+  cat /etc/sudoers
+
+Vous y trouverez les lignes suivantes:
+
+# Members of the admin group may gain root privileges
+%admin ALL=(ALL) ALL
+starmate ALL=(ALL) ALL
+
+Vous avez donc deux solutions, soit ajouter l’utilisateur au groupe admin:
+  usermod -g admin antoine
+ou
+  useradd antoine -g admin
+
+Soit vous éditez le fichier /etc/sudoers pour ajouter le compte manuellement:
+  sudo visudo
+
+Et y rajouter ça la fin:
+
+antoine ALL=(ALL) ALL
+
+ou alors pour une commande spécifique et sans demande du mot de passe:
+  antoine ALL=NOPASSWD:/usr/sbin/shutdown
+
+
