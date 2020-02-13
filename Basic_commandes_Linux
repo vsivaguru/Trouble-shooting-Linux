@@ -94,6 +94,9 @@ scp -r sec-svinayagam@100.64.1.5:/home/sec-svinayagam/synapps_bdd.xlsx .
 
 scp svinayagam@clasyn-pa01-ci.adm.fr.clara.net:/srv/synapps/git/weave.yml .
 
+# /etc/apt/sources.list
+apt-get --simulate upgrade
+apt-get --simulate dist-upgrade
 
 • LVM
 df -h
