@@ -2,7 +2,13 @@ https://peekin.fr.clara.net/CGraphz/index.php?module=dashboard#Load
 
 cat /etc/motd
 Uptime
-Free -m
+free -m
+uptime
+ps -ef | grep mysql
+
+netstat -nltp
+netstat -nltp | grep 8080
+
 vi /data/mysql/log/mysql.err
 Vi  /data/mysql/log/mysql-slow-query.log
 cd /var/log/
